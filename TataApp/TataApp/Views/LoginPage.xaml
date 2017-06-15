@@ -2,27 +2,29 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="TataApp.Views.LoginPage"
-             BackgroundColor="{StaticResource AccentColor2}"
-             Title="Login"
+             BackgroundColor="{StaticResource BackgroundColor}"
+             Title="Bancolombia App"
              BindingContext="{Binding Main, Source={StaticResource Locator}}">
     <ContentPage.Content>
         <ScrollView
         BindingContext="{Binding Login}">
             <StackLayout
-            Spacing="10"
+            Spacing="5"
             Padding="8">
                 <Image
                 Source="bancolombialogo.png"
-                    HeightRequest="130"
-                    WidthRequest="130">
+                    HeightRequest="160"
+                    WidthRequest="160">
                 </Image>
+               <!--
                 <Label
                 Text="Login"
                 FontSize="Large"
                 FontAttributes="Bold"
                 HorizontalOptions="Center"
-                TextColor="{StaticResource MenuFontColor}">
+                TextColor="{StaticResource LoginColor2}">
                 </Label>
+                -->
                 <Grid
                 Padding="30,0,30,0">
                     <Grid Grid.Row="0">
@@ -36,7 +38,7 @@
                         FontAttributes="Bold"
                         HorizontalOptions="Start"
                         VerticalOptions="Center"
-                        TextColor="{StaticResource MenuFontColor}">
+                        TextColor="{StaticResource LoginColor2}">
                         </Label>
                         <Entry
                         Grid.Column="1"
@@ -44,8 +46,7 @@
                         Placeholder="Enter an email..."
                         Keyboard="Email"
                         HorizontalOptions="FillAndExpand"
-                        VerticalOptions="Center"
-                        BackgroundColor="{StaticResource MenuFontColor}">
+                        VerticalOptions="Center">
                         </Entry>
                     </Grid>
                     <Grid Grid.Row="1">
@@ -59,7 +60,7 @@
                         FontAttributes="Bold"
                         HorizontalOptions="Start"
                         VerticalOptions="Center"
-                        TextColor="{StaticResource MenuFontColor}">
+                        TextColor="{StaticResource LoginColor2}">
                         </Label>
                         <Entry
                         Grid.Column="1"
@@ -67,8 +68,7 @@
                         Placeholder="Enter a password..."
                         IsPassword="True"
                         HorizontalOptions="FillAndExpand"
-                        VerticalOptions="Center"
-                        BackgroundColor="{StaticResource MenuFontColor}">
+                        VerticalOptions="Center">
                         </Entry>
                     </Grid>
                 </Grid>
@@ -85,7 +85,7 @@
                     FontAttributes="Bold"
                     HorizontalOptions="Start"
                     VerticalOptions="Center"
-                    TextColor="{StaticResource MenuFontColor}">
+                    TextColor="{StaticResource LoginColor2}">
                     </Label>
                 </StackLayout>
                 <ActivityIndicator
@@ -96,15 +96,6 @@
                 Padding="30,0,30,0"
                 Orientation="Vertical">
                     <Button
-                    Command="{Binding LoginCommand}"
-                    IsEnabled="{Binding IsEnabled}"
-                    VerticalOptions="Center"
-                    HorizontalOptions="FillAndExpand"
-                    BackgroundColor="{StaticResource AccentColor1}"
-                    TextColor="{StaticResource BackgroundColor}"
-                    Text="Login">
-                    </Button>
-                    <Button
                     Command="{Binding LoginFacebookCommand}"
                     IsEnabled="{Binding IsEnabled}"
                     VerticalOptions="Center"
@@ -114,12 +105,21 @@
                     Text="Login With Facebook">
                     </Button>
                     <Button
+                    Command="{Binding LoginCommand}"
+                    IsEnabled="{Binding IsEnabled}"
+                    VerticalOptions="Center"
+                    HorizontalOptions="FillAndExpand"
+                    BackgroundColor="{StaticResource AccentColor2}"
+                    TextColor="{StaticResource BackgroundColor}"
+                    Text="Login">
+                    </Button>
+                    <Button
                     Command="{Binding RegisterCommand}"
                     IsEnabled="{Binding IsEnabled}"
                     VerticalOptions="Center"
                     HorizontalOptions="FillAndExpand"
-                    BackgroundColor="{StaticResource MenuColor}"
-                    TextColor="{StaticResource MenuFontColor}"
+                    BackgroundColor="{StaticResource AccentColor2}"
+                    TextColor="{StaticResource BackgroundColor}"
                     Text="Register New User">
                     </Button>
                     <Label
@@ -127,7 +127,7 @@
                     FontAttributes="Bold"
                     HorizontalOptions="Center"
                     VerticalOptions="Center"
-                    TextColor="{StaticResource BackgroundColor}">
+                    TextColor="{StaticResource LoginColor2}">
                         <Label.GestureRecognizers>
                             <TapGestureRecognizer Command="{Binding ForgotPasswordCommand}"/>
                         </Label.GestureRecognizers>
