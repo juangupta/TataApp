@@ -4,6 +4,7 @@ using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using TataApp.Models;
 
 namespace TataApp.ViewModels
 {
@@ -12,13 +13,30 @@ namespace TataApp.ViewModels
         #region Properties
         public ObservableCollection<MenuItemViewModel> Menu { get; set; }
         public LoginViewModel Login { get; set; }
+        public TimesViewModel Times { get; set; }
+        public Employee Employee { get; set; }
         #endregion
         #region Constructors
         public MainViewModel()
         {
+            instance = this;
             Menu = new ObservableCollection<MenuItemViewModel>();
             Login = new LoginViewModel();
             LoadMenu();
+        }
+        #endregion
+
+        #region Singleton
+        private static MainViewModel instance;
+
+        public static MainViewModel GetInstance()
+        {
+            if (instance == null)
+            {
+                instance = new MainViewModel();
+            }
+
+            return instance;
         }
         #endregion
 
@@ -29,7 +47,7 @@ namespace TataApp.ViewModels
             {
                 Title = "Register Time",
                 Icon = "ic_access_time.png",
-                PageName = "RegisterTimePage",
+                PageName = "TimesPage",
 
             });
             Menu.Add(new MenuItemViewModel

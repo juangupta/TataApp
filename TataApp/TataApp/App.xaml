@@ -19,6 +19,10 @@
             <!--Menu Colors-->
             <Color x:Key="MenuColor">#ffde4f</Color>
             <Color x:Key="MenuFontColor">#ECF0F1</Color>
+
+            <!-- Parameters -->
+            <x:String x:Key="URLAPI">http://tataappapi.azurewebsites.net</x:String>
+            <x:String x:Key="URLBackend">http://tataappbackend.azurewebsites.net</x:String>
         </ResourceDictionary>
     </Application.Resources>
 </Application>
