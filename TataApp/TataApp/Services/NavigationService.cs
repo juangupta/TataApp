@@ -36,9 +36,17 @@ namespace TataApp.Services
                 case "TimesPage":
                     await App.Navigator.PushAsync(new TimesPage());
                     break;
+                case "NewTimePage":
+                    await App.Navigator.PushAsync(new NewTimePage());
+                    break;
                 default:
                     break;
             }
+        }
+
+        public async Task Back()
+        {
+            await App.Navigator.PopAsync();
         }
     }
 }

@@ -38,6 +38,7 @@
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Controls\BindablePicker.cs" />
     <Compile Include="Data\DataAccess.cs" />
     <Compile Include="Infrastructure\InstanceLocator.cs" />
     <Compile Include="Interfaces\IConfig.cs" />
@@ -53,9 +54,12 @@
     <Compile Include="Services\DataService.cs" />
     <Compile Include="Services\DialogService.cs" />
     <Compile Include="Services\NavigationService.cs" />
+    <Compile Include="ViewModels\ActivityItemViewModel.cs" />
     <Compile Include="ViewModels\LoginViewModel.cs" />
     <Compile Include="ViewModels\MainViewModel.cs" />
     <Compile Include="ViewModels\MenuItemViewModel.cs" />
+    <Compile Include="ViewModels\NewTimeViewModel.cs" />
+    <Compile Include="ViewModels\ProjectItemViewModel.cs" />
     <Compile Include="ViewModels\TimeItemViewModel.cs" />
     <Compile Include="ViewModels\TimesViewModel.cs" />
     <Compile Include="Views\HomePage.xaml.cs">

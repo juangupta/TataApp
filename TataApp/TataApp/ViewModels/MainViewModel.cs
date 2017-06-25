@@ -1,25 +1,36 @@
-﻿using System;
+﻿using GalaSoft.MvvmLight.Command;
+using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Input;
 using TataApp.Models;
+using TataApp.Services;
 
 namespace TataApp.ViewModels
 {
     public class MainViewModel
     {
+        #region Attributes
+        private NavigationService navigationService;
+        #endregion
+
         #region Properties
         public ObservableCollection<MenuItemViewModel> Menu { get; set; }
         public LoginViewModel Login { get; set; }
         public TimesViewModel Times { get; set; }
+        public NewTimeViewModel NewTime { get; set; }
         public Employee Employee { get; set; }
         #endregion
+
         #region Constructors
         public MainViewModel()
         {
             instance = this;
+
+            navigationService = new NavigationService();
             Menu = new ObservableCollection<MenuItemViewModel>();
             Login = new LoginViewModel();
             LoadMenu();
@@ -71,7 +82,20 @@ namespace TataApp.ViewModels
                 PageName = "LoginPage",
 
             });
-        } 
+        }
+        #endregion
+
+        #region Commands
+        public ICommand NewTimeCommand
+        {
+            get { return new RelayCommand(GoNewTime); }
+        }
+
+        private async void GoNewTime()
+        {
+            NewTime = new NewTimeViewModel();
+            await navigationService.Navigate("NewTimePage");
+        }
         #endregion
     }
 
