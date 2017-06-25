@@ -105,6 +105,14 @@ namespace TataApp.ViewModels
         private async Task LoadTimes()
         {
             IsRefreshing = true;
+
+            var checkConnection = await apiService.CheckConnection();
+            if (!checkConnection.IsSuccess)
+            {
+                await dialogService.ShowMessage("Error", checkConnection.Message);
+                return;
+
+            }
             var urlAPI = Application.Current.Resources["URLAPI"].ToString();
             var mainViewModel = MainViewModel.GetInstance();
             var employee = mainViewModel.Employee;
@@ -131,7 +139,9 @@ namespace TataApp.ViewModels
         private void ReloadTimes()
         {
             MyTimes.Clear();
-            foreach (var time in times)
+            foreach (var time in times
+                .OrderByDescending(t => t.DateReported)
+                     .ThenBy(t => t.From))
             {
                 MyTimes.Add(new TimeItemViewModel
                 {

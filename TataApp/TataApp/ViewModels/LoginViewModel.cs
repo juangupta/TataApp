@@ -145,6 +145,16 @@ namespace TataApp.ViewModels
             }
             IsEnabled = false;
             IsRunning = true;
+
+            var checkConnection = await apiService.CheckConnection();
+            if (!checkConnection.IsSuccess)
+            {
+                IsRunning = false;
+                await dialogService.ShowMessage("Error", checkConnection.Message);
+                return;
+
+            }
+
             var urlAPI = Application.Current.Resources["URLAPI"].ToString();
 
             var token = await apiService.GetToken(
