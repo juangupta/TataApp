@@ -216,6 +216,13 @@ namespace TataApp.ViewModels
             navigationService.SetMainPage("MasterPage");
         }
 
+        public ICommand LoginFacebookCommand { get { return new RelayCommand(LoginFacebook); } }
+
+        private void LoginFacebook()
+        {
+            navigationService.SetMainPage("LoginFacebookPage");
+        }
+
         #endregion
     }
 }

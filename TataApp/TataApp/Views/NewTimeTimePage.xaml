@@ -2,7 +2,7 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="TataApp.Views.NewTimeTimePage"
-             xmlns:control="clr-namespace:TataAppMac.Controls"
+             xmlns:control="clr-namespace:TataApp.Controls"
              Icon="ic_action_av_timer.png"
              Title="New Time"
              BackgroundColor="{StaticResource BackgroundColor}"
@@ -63,11 +63,11 @@
                     HorizontalOptions="FillAndExpand"
                     VerticalOptions="Center">
                 </control:BindablePicker>
-                <Button
+               <Button
                     Clicked="NewProjectClicked"
                     HeightRequest="45"
                     TextColor="{StaticResource BackgroundColor}"
-                    BackgroundColor="{StaticResource AccentColor1}"
+                    BackgroundColor="{StaticResource AccentColor2}"
                     VerticalOptions="Center"
                     HorizontalOptions="End"
                     Text="...">
@@ -105,7 +105,7 @@
                     Clicked="NewActivityClicked"
                     HeightRequest="45"
                     TextColor="{StaticResource BackgroundColor}"
-                    BackgroundColor="{StaticResource AccentColor1}"
+                    BackgroundColor="{StaticResource AccentColor2}"
                     VerticalOptions="Center"
                     HorizontalOptions="End"
                     Text="...">
@@ -192,7 +192,7 @@
           </Button>
         </StackLayout>
       </ScrollView>
-      <!-- Project modal -->
+      <!-- Project modal  -->
       <ContentView
           x:Name="ProjectModal"
           AbsoluteLayout.LayoutBounds="0, 0, 1, 1"
@@ -202,7 +202,7 @@
           Padding="10, 0">
         <StackLayout
             Orientation="Vertical"
-            BackgroundColor="White"
+            BackgroundColor="{StaticResource BackgroundColor}"
             HeightRequest="175"
             WidthRequest="300"
             HorizontalOptions="Center"
@@ -217,7 +217,7 @@
           <Entry
               x:Name="ProjectDescription"
               Placeholder="Project description.."
-              TextColor="Black"
+              TextColor="{StaticResource MainColor}"
               VerticalOptions="CenterAndExpand"
               HorizontalOptions="Center"
               WidthRequest="250">
@@ -229,8 +229,8 @@
                 Text="Cancel"
                 VerticalOptions="CenterAndExpand"
                 HorizontalOptions="FillAndExpand"
-                BackgroundColor="Red"
-                TextColor="White"
+                BackgroundColor="{StaticResource MenuColor}"
+                TextColor="{StaticResource BackgroundColor}"
                 HeightRequest="40"
                 BorderRadius="20"
                 Clicked="CancelProjectClicked">
@@ -239,8 +239,8 @@
                 Text="Save"
                 VerticalOptions="CenterAndExpand"
                 HorizontalOptions="FillAndExpand"
-                BackgroundColor="Green"
-                TextColor="White"
+                BackgroundColor="{StaticResource MenuColor}"
+                TextColor="{StaticResource BackgroundColor}"
                 HeightRequest="40"
                 BorderRadius="20"
                 Clicked="SaveProjectClicked">
@@ -248,7 +248,7 @@
           </StackLayout>
         </StackLayout>
       </ContentView>
-      <!-- Activity modal -->
+      <!-- Activity -->
       <ContentView
           x:Name="ActivityModal"
           AbsoluteLayout.LayoutBounds="0, 0, 1, 1"
@@ -258,7 +258,7 @@
           Padding="10, 0">
         <StackLayout
             Orientation="Vertical"
-            BackgroundColor="White"
+            BackgroundColor="{StaticResource BackgroundColor}"
             HeightRequest="175"
             WidthRequest="300"
             HorizontalOptions="Center"
@@ -273,7 +273,7 @@
           <Entry
               x:Name="ActivityDescription"
               Placeholder="Activity description.."
-              TextColor="Black"
+              TextColor="{StaticResource MainColor}"
               VerticalOptions="CenterAndExpand"
               HorizontalOptions="Center"
               WidthRequest="250">
@@ -285,8 +285,8 @@
                 Text="Cancel"
                 VerticalOptions="CenterAndExpand"
                 HorizontalOptions="FillAndExpand"
-                BackgroundColor="Red"
-                TextColor="White"
+                BackgroundColor="{StaticResource MenuColor}"
+                TextColor="{StaticResource BackgroundColor}"
                 HeightRequest="40"
                 BorderRadius="20"
                 Clicked="CancelActivityClicked">
@@ -295,8 +295,8 @@
                 Text="Save"
                 VerticalOptions="CenterAndExpand"
                 HorizontalOptions="FillAndExpand"
-                BackgroundColor="Green"
-                TextColor="White"
+                BackgroundColor="{StaticResource MenuColor}"
+                TextColor="{StaticResource BackgroundColor}"
                 HeightRequest="40"
                 BorderRadius="20"
                 Clicked="SaveActivityClicked">

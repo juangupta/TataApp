@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Threading.Tasks;
 using TataApp.Views;
 
 namespace TataApp.Services
@@ -38,6 +34,12 @@ namespace TataApp.Services
                     break;
                 case "NewTimePage":
                     await App.Navigator.PushAsync(new NewTimePage());
+                    break;
+                case "LocationsPage":
+                    await App.Navigator.PushAsync(new LocationsPage());
+                    break;
+                case "LoginFacebookPage":
+                    App.Current.MainPage = new LoginFacebookPage();
                     break;
                 default:
                     break;

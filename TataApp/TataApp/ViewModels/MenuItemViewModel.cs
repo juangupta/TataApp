@@ -46,11 +46,14 @@ namespace TataApp.ViewModels
                 {
                     case "TimesPage":
                         mainViewModel.Times = new TimesViewModel();
-                        await navigationService.Navigate("TimesPage");
+                        break;
+                    case "LocationsPage":
+                        mainViewModel.Locations = new LocationsViewModel();
                         break;
                     default:
                         break;
                 }
+                await navigationService.Navigate(PageName);
             } 
         }
         #endregion

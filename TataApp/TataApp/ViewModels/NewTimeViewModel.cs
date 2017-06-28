@@ -22,7 +22,7 @@
         DialogService dialogService;
         NavigationService navigationService;
         DataService dataService;
-        //GeolocatorService geolocatorService;
+        GeolocatorService geolocatorService;
         bool isRunning;
         bool isEnabled;
         bool isRepeated;
@@ -270,7 +270,7 @@
             dialogService = new DialogService();
             navigationService = new NavigationService();
             dataService = new DataService();
-            //geolocatorService = new GeolocatorService();
+            geolocatorService = new GeolocatorService();
 
             IsEnabled = true;
             Until = DateTime.Now;
@@ -438,48 +438,48 @@
             var mainViewModel = MainViewModel.GetInstance();
             var employee = mainViewModel.Employee;
 
-            //await geolocatorService.GetLocation();
+            await geolocatorService.GetLocation();
 
-            //var newTimeRequest = new NewTimeRequest
-            //{
-            //    ActivityId = ActivityId,
-            //    DateReported = DateReported,
-            //    EmployeeId = employee.EmployeeId,
-            //    From = From,
-            //    Latitude = geolocatorService.Latitude,
-            //    Longitude = geolocatorService.Longitude,
-            //    IsRepeated = IsRepeated,
-            //    IsRepeatFriday = IsRepeatFriday,
-            //    IsRepeatMonday = IsRepeatMonday,
-            //    IsRepeatSaturday = IsRepeatSaturday,
-            //    IsRepeatSunday = IsRepeatSunday,
-            //    IsRepeatThursday = IsRepeatThursday,
-            //    IsRepeatTuesday = IsRepeatTuesday,
-            //    IsRepeatWednesday = IsRepeatWednesday,
-            //    ProjectId = ProjectId,
-            //    Remarks = Remarks,
-            //    To = To,
-            //    Until = Until,
-            //};
+            var newTimeRequest = new NewTimeRequest
+            {
+                ActivityId = ActivityId,
+                DateReported = DateReported,
+                EmployeeId = employee.EmployeeId,
+                From = From,
+                Latitude = geolocatorService.Latitude,
+                Longitude = geolocatorService.Longitude,
+                IsRepeated = IsRepeated,
+                IsRepeatFriday = IsRepeatFriday,
+                IsRepeatMonday = IsRepeatMonday,
+                IsRepeatSaturday = IsRepeatSaturday,
+                IsRepeatSunday = IsRepeatSunday,
+                IsRepeatThursday = IsRepeatThursday,
+                IsRepeatTuesday = IsRepeatTuesday,
+                IsRepeatWednesday = IsRepeatWednesday,
+                ProjectId = ProjectId,
+                Remarks = Remarks,
+                To = To,
+                Until = Until,
+            };
 
-            //var response = await apiService.Post(
-            //    urlAPI,
-            //    "/api",
-            //    "/Times",
-            //    employee.TokenType,
-            //    employee.AccessToken,
-            //    newTimeRequest);
+            var response = await apiService.Post(
+                urlAPI,
+                "/api",
+                "/Times",
+                employee.TokenType,
+                employee.AccessToken,
+                newTimeRequest);
 
-            //IsEnabled = true;
-            //IsRunning = false;
+            IsEnabled = true;
+            IsRunning = false;
 
-            //if (!response.IsSuccess)
-            //{
-            //    await dialogService.ShowMessage("Error", response.Message);
-            //    return;
-            //}
+            if (!response.IsSuccess)
+            {
+                await dialogService.ShowMessage("Error", response.Message);
+                return;
+            }
 
-            //await navigationService.Back();
+            await navigationService.Back();
         }
 
         private void ConvertHours()

@@ -22,6 +22,7 @@ namespace TataApp.ViewModels
         public LoginViewModel Login { get; set; }
         public TimesViewModel Times { get; set; }
         public NewTimeViewModel NewTime { get; set; }
+        public LocationsViewModel Locations { get; set; }
         public Employee Employee { get; set; }
         #endregion
 
@@ -70,9 +71,9 @@ namespace TataApp.ViewModels
             });
             Menu.Add(new MenuItemViewModel
             {
-                Title = "Localizate Employees",
+                Title = "Locations",
                 Icon = "ic_location_on.png",
-                PageName = "LocalizatePage",
+                PageName = "LocationsPage",
 
             });
             Menu.Add(new MenuItemViewModel
