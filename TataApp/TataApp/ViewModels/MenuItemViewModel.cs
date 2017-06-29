@@ -50,6 +50,9 @@ namespace TataApp.ViewModels
                     case "LocationsPage":
                         mainViewModel.Locations = new LocationsViewModel();
                         break;
+                    case "EmployeesPage":
+                        mainViewModel.Employees = new EmployeesViewModel();
+                        break;
                     default:
                         break;
                 }

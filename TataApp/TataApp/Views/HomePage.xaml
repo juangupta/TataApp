@@ -43,7 +43,7 @@
                 VerticalOptions="Center"
                 FontSize="Medium"
                 TextColor="{StaticResource FontColor}"
-                Text="{Binding Employee.Email, StringFormat='Email: {0}'}}">
+                Text="{Binding Employee.Email, StringFormat='Email or Code: {0}'}}">
             </Label>
         </StackLayout>
     </ContentPage.Content>

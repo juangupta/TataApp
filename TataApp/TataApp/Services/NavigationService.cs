@@ -19,6 +19,9 @@ namespace TataApp.Services
                 case "LoginPage":
                     App.Current.MainPage = new LoginPage();
                     break;
+                case "LoginFacebookPage":
+                    App.Current.MainPage = new LoginFacebookPage();
+                    break;
                 default:
                     break;
             }
@@ -38,8 +41,11 @@ namespace TataApp.Services
                 case "LocationsPage":
                     await App.Navigator.PushAsync(new LocationsPage());
                     break;
-                case "LoginFacebookPage":
-                    App.Current.MainPage = new LoginFacebookPage();
+                case "EmployeesPage":
+                    await App.Navigator.PushAsync(new EmployeesPage());
+                    break;
+                case "EmployeeDetailPage":
+                    await App.Navigator.PushAsync(new EmployeeDetailPage());
                     break;
                 default:
                     break;
