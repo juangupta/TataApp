@@ -17,7 +17,7 @@
             <Color x:Key="LoginColor2">#000080</Color>
             
             <!--Menu Colors-->
-            <Color x:Key="MenuColor">#ffde4f</Color>
+            <Color x:Key="MenuColor">#FFD200</Color>
             <Color x:Key="MenuFontColor">#ECF0F1</Color>
 
             <!-- Parameters -->

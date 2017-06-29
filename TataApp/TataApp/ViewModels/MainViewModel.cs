@@ -25,6 +25,7 @@ namespace TataApp.ViewModels
         public LocationsViewModel Locations { get; set; }
         public EmployeesViewModel Employees { get; set; }
         public EmployeeDetailViewModel EmployeeDetail { get; set; }
+        public ProfileViewModel Profile { get; internal set; }
         public Employee Employee { get; set; }
         #endregion
 
@@ -80,6 +81,13 @@ namespace TataApp.ViewModels
             });
             Menu.Add(new MenuItemViewModel
             {
+                Title = "My Profile",
+                Icon = "ic_account_circle.png",
+                PageName = "ProfilePage",
+
+            });
+            Menu.Add(new MenuItemViewModel
+            {
                 Title = "Close Sesion",
                 Icon = "ic_exit_to_app.png",
                 PageName = "LoginPage",
@@ -93,6 +101,7 @@ namespace TataApp.ViewModels
         {
             get { return new RelayCommand(GoNewTime); }
         }
+
 
         private async void GoNewTime()
         {
