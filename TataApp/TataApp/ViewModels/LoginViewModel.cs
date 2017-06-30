@@ -209,10 +209,7 @@ namespace TataApp.ViewModels
             dataService.DeleteAllAndInsert(employee);
             var mainViewModel = MainViewModel.GetInstance();
             mainViewModel.Employee = employee;
-            //await dialogService.ShowMessage(
-            //    "Taran!!",
-            //    "Welcome; " + employee.FullName
-            //    );
+            mainViewModel.RegisterDevice();
             navigationService.SetMainPage("MasterPage");
         }
 

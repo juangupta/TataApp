@@ -6,15 +6,17 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Input;
+using TataApp.Interfaces;
 using TataApp.Models;
 using TataApp.Services;
+using Xamarin.Forms;
 
 namespace TataApp.ViewModels
 {
     public class MainViewModel
     {
         #region Attributes
-        private NavigationService navigationService;
+        private NavigationService navigationService;    
         #endregion
 
         #region Properties
@@ -56,6 +58,13 @@ namespace TataApp.ViewModels
         #endregion
 
         #region Methods
+
+        public void RegisterDevice()
+        {
+            var register = DependencyService.Get<IRegisterDevice>();
+            register.RegisterDevice();
+        }
+
         private void LoadMenu()
         {
             Menu.Add(new MenuItemViewModel

@@ -129,6 +129,32 @@ namespace TataApp.ViewModels
                 return;
             }
 
+            var urlAPI = Application.Current.Resources["URLAPI"].ToString();
+            var mainViewModel = MainViewModel.GetInstance();
+            var from = mainViewModel.Employee;
+            var response = await apiService.SendNotification(
+                urlAPI,
+                "/api",
+                "/Employees/SendNotification",
+                from.TokenType,
+                from.AccessToken,
+                from.EmployeeId.ToString(),
+                employee.EmployeeId.ToString(),
+                Message);
+
+            if (!response.IsSuccess)
+            {
+                IsRunning = false;
+                IsEnabled = true;
+                await dialogService.ShowMessage("Error", "Error sending the notification, try latter.");
+                return;
+            }
+
+            IsRunning = false;
+            IsEnabled = true;
+            await dialogService.ShowMessage("Ok", "The notification was sent.");
+            Message = string.Empty;
+
         }
         #endregion
     }
