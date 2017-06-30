@@ -13,7 +13,7 @@
         AbsoluteLayout.LayoutFlags="All"
         BindingContext="{Binding Profile}">
       <StackLayout
-          Padding="2">
+          Padding="8">
         <Grid>
           <Grid Grid.Row="0">
             <Grid.ColumnDefinitions>
@@ -195,39 +195,50 @@
           <Image
             Source="ic_add_a_photo.png"
             VerticalOptions="Start"
-            HorizontalOptions="End"
-            WidthRequest="50"
-            HeightRequest="50">
+            HorizontalOptions="Start"
+            WidthRequest="45"
+            HeightRequest="45">
+            <Image.GestureRecognizers>
+              <TapGestureRecognizer Command="{Binding TakePictureCommand}"/>
+            </Image.GestureRecognizers>          
           </Image>
           <controls:CircleImage
               VerticalOptions="Center"
-              HorizontalOptions="Start"
+              HorizontalOptions="Center"
               Source="{Binding FullPicture}"
               Aspect="AspectFill"
-              WidthRequest="100"
-              HeightRequest="100">
+              WidthRequest="112"
+              HeightRequest="80">
           </controls:CircleImage>
           <controls:CircleImage
-              VerticalOptions="Center"
-              HorizontalOptions="Start"
+              VerticalOptions="Start"
+              HorizontalOptions="Center"
               Source="{Binding ImageSource}"
               Aspect="AspectFill"
-              WidthRequest="100"
-              HeightRequest="100">
+              WidthRequest="112"
+              HeightRequest="80">
           </controls:CircleImage>
           <Image
             Source="ic_insert_photo.png"
             VerticalOptions="Start"
             HorizontalOptions="End"
-            WidthRequest="50"
-            HeightRequest="50">
+            WidthRequest="45"
+            HeightRequest="45">
+            <Image.GestureRecognizers>
+              <TapGestureRecognizer Command="{Binding PickPictureCommand}"/>
+            </Image.GestureRecognizers>     
+          
           </Image>
         </StackLayout>
-        <ActivityIndicator
-            VerticalOptions="CenterAndExpand"
+        <AbsoluteLayout>
+          <ActivityIndicator
+            AbsoluteLayout.LayoutBounds="0, 0, 1, 1"
+            AbsoluteLayout.LayoutFlags="All"
             IsRunning="{Binding IsRunning}">
         </ActivityIndicator>
         <Button
+            AbsoluteLayout.LayoutBounds="0, 0, 1, 1"
+            AbsoluteLayout.LayoutFlags="All"
             Command="{Binding SaveProfileCommand}"
             IsEnabled="{Binding IsEnabled}"
             VerticalOptions="End"
@@ -236,8 +247,9 @@
             TextColor="{StaticResource BackgroundColor}"
             HeightRequest="40"
             BorderRadius="20"
-            Text="Send Message">
+            Text="Save">
         </Button>
+        </AbsoluteLayout>
       </StackLayout>
     </ScrollView>
   </ContentPage.Content>

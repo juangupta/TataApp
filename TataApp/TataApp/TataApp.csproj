@@ -40,6 +40,7 @@
     </Compile>
     <Compile Include="Controls\BindablePicker.cs" />
     <Compile Include="Data\DataAccess.cs" />
+    <Compile Include="Helpers\FilesHelper.cs" />
     <Compile Include="Infrastructure\InstanceLocator.cs" />
     <Compile Include="Interfaces\IConfig.cs" />
     <Compile Include="Interfaces\IRegisterDevice.cs" />
@@ -62,6 +63,7 @@
     <Compile Include="Services\GeolocatorService.cs" />
     <Compile Include="Services\NavigationService.cs" />
     <Compile Include="ViewModels\ActivityItemViewModel.cs" />
+    <Compile Include="ViewModels\DocumentTypeItemViewModel.cs" />
     <Compile Include="ViewModels\EmployeeDetailViewModel.cs" />
     <Compile Include="ViewModels\EmployeeItemViewModel.cs" />
     <Compile Include="ViewModels\EmployeesViewModel.cs" />
