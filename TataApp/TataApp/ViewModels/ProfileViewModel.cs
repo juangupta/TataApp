@@ -187,11 +187,7 @@
                 EmployeeCode = EmployeeCode,
                 DocumentTypeId = DocumentTypeId,
                 LoginTypeId = LoginTypeId,
-                //AccessToken = AccessToken,
-                //TokenType = TokenType,
-                //TokenExpires = TokenExpires,
                 Password = Password,
-                //IsRemembered = IsRemembered,
                 Document = Document,
                 ImageArray = imageArray,
                 Email = Email,
@@ -202,7 +198,7 @@
             IsEnabled = false;
 
            var urlAPI = Application.Current.Resources["URLAPI"].ToString();
-           var response = await apiService.Post<Employee>(
+           var response = await apiService.Put<Employee>(
                 urlAPI,
                 "/api",
                 "/Employees",
@@ -217,6 +213,7 @@
                 await dialogService.ShowMessage("Error", response.Message);
                 return;
             }
+             
             var mainViewModel = MainViewModel.GetInstance();
             mainViewModel.Employee = this;
             dataService.DeleteAllAndInsert(this);
